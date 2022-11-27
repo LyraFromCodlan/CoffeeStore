@@ -13,7 +13,6 @@ public class Coffee {
 //    private Long id;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
 
