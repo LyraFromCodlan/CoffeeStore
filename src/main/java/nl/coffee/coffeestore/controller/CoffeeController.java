@@ -18,31 +18,10 @@ import java.util.Optional;
 @RestController
 @RequestMapping("coffee.nl/coffees")
 public class CoffeeController {
-    //Test to use internal variable greeting-name
-    //    @Value("${greeting-name}")
-    @Value("${greeting-name: Cleveland}")
-    private String greetingName;
-    @Value("${welcome-phrase}")
-    private String greetingPhrase;
-
     private final CoffeeRepository coffeeRepository;
 
     public CoffeeController(CoffeeRepository coffeeRepository){
         this.coffeeRepository = coffeeRepository;
-    }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/welcome")
-    public String welcomePage(@RequestParam(name = "username") String username){
-//        return "Welcome to the shop, "+username;
-
-        return greetingPhrase;
-    }
-
-    @GetMapping("/greetings")
-    public String greetingPage()
-    {
-        System.out.println(SingleCoffeeOwner.getInstance("StarBucks"));
-        return "Welcome to the shop, "+greetingName;
     }
 
     @GetMapping
